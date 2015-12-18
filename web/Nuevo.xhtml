@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Hola</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        
+            
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h3>#{categoriasController.tituloOpe}</h3>
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="Cat:" for="cat" />
+                    <h:inputText id="cat" value="#{categoriasController.cat.cat}" title="Cat" required="true" requiredMessage="The Cat field is required."/>
+                </h:panelGrid>
+                
+                <h:commandButton value="Guardar" action="#{categoriasController.doGuardar()}"/>
+                
+                <h:commandButton value="Cancelar" immediate="true" action="#{categoriasController.doverIndex()}"/>
+            </h:form>
+        </f:view>
+
+            
+            
+            
+            
+            
+        
+        
+        
+        
+    </body>
+</html>

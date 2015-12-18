@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>Mis Finanzas</title>
+        
+        
+    </h:head>
+    
+    
+    <h:body>
+        Mis Finanzas-Pagina Principal
+       
+        <f:view>
+
+
+            <h:form>
+                <fieldset style="width: 50%;">
+                <legend>Busqueda:</legend>
+                <h:inputText c:placeholder="Categoria" value="#{categoriasController.txtBusqueda}" />
+                <h:commandButton value="Buscar" action="#{categoriasController.doBuscar()}" />
+                </fieldset>
+                
+               
+                
+                
+                
+                
+                
+                
+                
+                
+                <h1><h:outputText value="Categorias"/></h1>
+                <h:dataTable value="#{categoriasController.listaCat}"  var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id Categoria"/>
+                        </f:facet>
+                        <h:outputText value="#{item.pkIdCat}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Categoria"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cat}"/>
+                    </h:column>
+                           
+                     <h:column>
+                        
+                            
+                           <h:commandButton value="modificar" action="#{categoriasController.doPrepararModificacion(item)}" />
+                    &nbsp;
+                    <h:commandButton value="eliminar" action="#{categoriasController.doBorrar(item)}" />          
+                        
+                        
+                        
+                        
+                    </h:column>
+                    
+                </h:dataTable>
+                 <a jsf:outcome="Nuevo.xhtml" target="_blank">Nueva Categoria</a>
+            </h:form>
+        </f:view>
+
+    
+    </h:body>
+</html>
+
